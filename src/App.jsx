@@ -23,8 +23,6 @@ function App() {
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/user' element={<User/>}/>
        </Routes>
- 
   )
 }
-
 export default App
