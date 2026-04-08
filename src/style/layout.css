@@ -1,0 +1,32 @@
+/* Add top padding to main content containers to account for fixed header */
+.container {
+  padding-top: 80px;
+  min-height: calc(100vh - 80px);
+}
+
+.container1 {
+  height: 80px;
+  background-color: #fcb298;
+}
+
+/* Ensure all main content areas have proper spacing */
+.home, .products-page, .favorites, .cart {
+  padding-top: 20px;
+}
+
+/* Specific page adjustments */
+.home {
+  min-height: calc(100vh - 140px);
+}
+
+.products-page {
+  min-height: calc(100vh - 140px);
+}
+
+.favorites {
+  min-height: calc(100vh - 140px);
+}
+
+.cart {
+  min-height: calc(100vh - 140px);
+}

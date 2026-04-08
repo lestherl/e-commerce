@@ -1,0 +1,223 @@
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  z-index: 1500;
+}
+
+.search-form {
+  position: relative;
+  width: 100%;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 45px 10px 15px;
+  border: 2px solid #e1e5e9;
+  border-radius: 25px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+}
+
+.search-input:focus {
+  border-color: #ffffff;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.search-input::placeholder {
+  color: #6c757d;
+}
+
+.search-clear {
+  position: absolute;
+  right: 45px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.search-clear:hover {
+  background-color: #efebe9;
+  color: #495057;
+}
+
+.search-button {
+  position: absolute;
+  right: 5px;
+  background: #fbfeff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.search-button:hover {
+  background: #ff8a5b;
+  transform: scale(1.05);
+}
+
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #e1e5e9;
+  border-top: none;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1500;
+  margin-top: 2px;
+}
+
+.suggestion-item {
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #f8f9fa;
+  font-size: 14px;
+  color: #495057;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background-color: #f8f9fa;
+  color: #fcb298;
+}
+
+.suggestion-item:first-child {
+  border-radius: 0 0 15px 15px 0 0;
+}
+
+/* Scrollbar styling for suggestions */
+.search-suggestions::-webkit-scrollbar {
+  width: 6px;
+}
+
+.search-suggestions::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.search-suggestions::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.search-suggestions::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .search-container {
+    max-width: 300px;
+  }
+  
+  .search-input {
+    padding: 8px 40px 8px 12px;
+    font-size: 13px;
+  }
+  
+  .search-button {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  .search-clear {
+    right: 38px;
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-container {
+    max-width: 250px;
+  }
+  
+  .search-input {
+    padding: 6px 35px 6px 10px;
+    font-size: 12px;
+  }
+  
+  .search-button {
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+  }
+  
+  .search-clear {
+    right: 32px;
+    width: 18px;
+    height: 18px;
+    font-size: 14px;
+  }
+  
+  .suggestion-item {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+}
+
+/* Animation for suggestions */
+.search-suggestions {
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Focus states */
+.search-input:focus + .search-clear {
+  color: #fcb298;
+}
+
+/* Loading state */
+.search-input.loading {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="%233498db" stroke-width="2" stroke-dasharray="31.416" stroke-dashoffset="31.416"><animate attributeName="stroke-dashoffset" dur="1s" to="0" repeatCount="indefinite"/></circle></svg>');
+  background-repeat: no-repeat;
+  background-position: right 45px center;
+  background-size: 16px;
+}
